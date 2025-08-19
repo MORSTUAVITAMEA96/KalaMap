@@ -1,224 +1,102 @@
 [
   {
-    "id": "mi_hof_lambrate",
-    "title": "Hall of Fame — Via Viotti (Lambrate)",
-    "city": "Milano",
-    "type": "hall_of_fame",
-    "risk": "basso",
-    "legal": true,
-    "lat": 45.4868,
-    "lng": 9.2423,
-    "desc": "Storico muro legale con rotazione di pezzi. Ideale per fotografare street art legale.",
-    "tags": [
-      "muro_legale",
-      "fotografia"
-    ],
-    "images": [],
-    "links": []
-  },
-  {
-    "id": "mi_street_nolo_tunnel",
-    "title": "Murales — Tunnel NoLo",
-    "city": "Milano",
-    "type": "street_art",
-    "risk": "medio",
-    "legal": false,
-    "lat": 45.5035,
-    "lng": 9.2165,
-    "desc": "Galleria di murales molto fotografati. Segnalazione a scopo documentale.",
-    "tags": [
-      "street_art",
-      "fotografia"
-    ],
-    "images": [],
-    "links": []
-  },
-  {
-    "id": "mi_ex_area_industriale",
-    "title": "Ex area industriale (perimetro esterno)",
-    "city": "Milano",
-    "type": "abbandonato",
-    "risk": "alto",
-    "legal": false,
-    "lat": 45.465,
-    "lng": 9.18,
-    "desc": "Documentazione esterna. Non incoraggiamo accessi non autorizzati.",
-    "tags": [
-      "urbex",
-      "storia locale"
-    ],
-    "images": [],
-    "links": []
-  },
-  {
-    "id": "mi_muro_legale_bovisa",
-    "title": "Muro legale — Bovisa",
-    "city": "Milano",
-    "type": "muro_legale",
-    "risk": "basso",
-    "legal": true,
-    "lat": 45.505,
-    "lng": 9.149,
-    "desc": "Spazio con permesso esplicito per dipingere. Verifica eventuali orari/regole locali.",
-    "tags": [
-      "legal",
-      "community"
-    ],
-    "images": [],
-    "links": []
-  },
-  {
-    "id": "mi_pontano_lambrate",
-    "title": "Via Pontano — Lambrate",
-    "city": "Milano",
-    "type": "street_art",
-    "risk": "medio",
-    "legal": false,
-    "lat": 45.4866,
-    "lng": 9.2442,
-    "desc": "Lunghissimo muro con rotazione di pezzi. Documentazione fotografica consigliata. Verifica sempre le regole locali.",
-    "tags": [
-      "street_art",
-      "lambrate"
-    ],
-    "images": [],
-    "links": []
-  },
-  {
-    "id": "mi_leoncavallo_murales",
-    "title": "Leoncavallo — murales esterni",
-    "city": "Milano",
-    "type": "street_art",
-    "risk": "basso",
-    "legal": false,
-    "lat": 45.5065,
-    "lng": 9.218,
-    "desc": "Pareti esterne ricoperte di murales storici. Visita rispettosa, senza entrare in aree non aperte al pubblico.",
-    "tags": [
-      "storico",
-      "murales"
-    ],
-    "images": [],
-    "links": []
-  },
-  {
-    "id": "mi_bovisa_sottopasso",
-    "title": "Sottopasso — Bovisa",
-    "city": "Milano",
-    "type": "street_art",
-    "risk": "medio",
-    "legal": false,
-    "lat": 45.506,
-    "lng": 9.1535,
-    "desc": "Sottopasso ferroviario con lavori frequenti. Illuminazione variabile.",
-    "tags": [
-      "bovisa",
-      "tunnel"
-    ],
-    "images": [],
-    "links": []
-  },
-  {
-    "id": "mi_navigli_underpass",
-    "title": "Ripa di Porta Ticinese — underpass",
-    "city": "Milano",
-    "type": "street_art",
-    "risk": "basso",
-    "legal": false,
-    "lat": 45.4499,
-    "lng": 9.1694,
-    "desc": "Sponde e sottopassi con interventi grafici; zona molto frequentata. Documentazione, non è un muro legale.",
-    "tags": [
-      "navigli",
-      "fotografia"
-    ],
-    "images": [],
-    "links": []
-  },
-  {
-    "id": "mi_greco_pirelli_wall",
-    "title": "Greco Pirelli — pareti ferroviarie",
-    "city": "Milano",
-    "type": "street_art",
-    "risk": "medio",
-    "legal": false,
-    "lat": 45.5069,
-    "lng": 9.217,
-    "desc": "Tratti ferroviari con murales. Prestare attenzione a traffico e sicurezza.",
-    "tags": [
-      "greco",
-      "ferrovia"
-    ],
-    "images": [],
-    "links": []
-  },
-  {
-    "id": "mi_scala_farini_perimetro",
-    "title": "Ex Scalo Farini — perimetro esterno",
+    "id": "farini",
+    "title": "Ex Scalo Farini (perimetro)",
     "city": "Milano",
     "type": "abbandonato",
     "risk": "alto",
     "legal": false,
     "lat": 45.4948,
     "lng": 9.1745,
-    "desc": "Solo perimetro esterno. Non incoraggiamo accessi. Zone con vecchie produzioni di street art visibili dall'esterno.",
+    "desc": "Ex scalo ferroviario, documentazione solo da esterno.",
     "tags": [
       "urbex",
-      "perimetro"
-    ],
-    "images": [],
-    "links": []
+      "scalo"
+    ]
   },
   {
-    "id": "mi_porta_romana_scali",
-    "title": "Ex Scalo Porta Romana — perimetro",
+    "id": "porta_romana",
+    "title": "Ex Scalo Porta Romana (perimetro)",
     "city": "Milano",
     "type": "abbandonato",
     "risk": "alto",
     "legal": false,
     "lat": 45.4492,
     "lng": 9.2133,
-    "desc": "Solo viste esterne. Area in trasformazione; aggiornare info prima di recarsi.",
+    "desc": "Perimetro esterno, zona in trasformazione.",
+    "tags": [
+      "urbex"
+    ]
+  },
+  {
+    "id": "tabacchi",
+    "title": "Ex Manifattura Tabacchi (esterni)",
+    "city": "Milano",
+    "type": "abbandonato",
+    "risk": "alto",
+    "legal": false,
+    "lat": 45.4765,
+    "lng": 9.1822,
+    "desc": "Vecchia manifattura, visibile da strada.",
     "tags": [
       "urbex",
-      "perimetro"
-    ],
-    "images": [],
-    "links": []
+      "industriale"
+    ]
   },
   {
-    "id": "mi_muro_legale_cascina_merlata",
-    "title": "Muro legale — Cascina Merlata (segnalato)",
+    "id": "macello",
+    "title": "Ex Macello (esterni)",
     "city": "Milano",
-    "type": "muro_legale",
-    "risk": "basso",
-    "legal": true,
-    "lat": 45.5078,
-    "lng": 9.1035,
-    "desc": "Spazio indicato come idoneo per progetti autorizzati; informarsi su eventuali permessi e orari.",
+    "type": "abbandonato",
+    "risk": "alto",
+    "legal": false,
+    "lat": 45.4441,
+    "lng": 9.236,
+    "desc": "Area in trasformazione, visibile dall’esterno.",
     "tags": [
-      "muro_legale"
-    ],
-    "images": [],
-    "links": []
+      "urbex"
+    ]
   },
   {
-    "id": "mi_kala_piece_demo",
-    "title": "KALA — piece demo (foto)",
-    "city": "—",
-    "type": "street_art",
-    "risk": "basso",
+    "id": "maestoso",
+    "title": "Ex Cinema Maestoso",
+    "city": "Milano",
+    "type": "abbandonato",
+    "risk": "medio",
     "legal": false,
-    "lat": 45.4642,
-    "lng": 9.19,
-    "desc": "Esempio di tag/logo KALA per la gallery. Sostituisci coordinate e info reali quando carichi il pezzo.",
+    "lat": 45.4457,
+    "lng": 9.2028,
+    "desc": "Ex cinema, facciata visibile.",
     "tags": [
-      "kala",
-      "demo"
-    ],
-    "images": [
-      "assets/kala-tag.jpg"
-    ],
-    "links": []
+      "urbex"
+    ]
+  },
+  {
+    "id": "innocenti",
+    "title": "Ex Innocenti Lambrate",
+    "city": "Milano",
+    "type": "abbandonato",
+    "risk": "alto",
+    "legal": false,
+    "lat": 45.488,
+    "lng": 9.25,
+    "desc": "Area ex industriale.",
+    "tags": [
+      "urbex"
+    ]
+  },
+  {
+    "id": "carlo_erba",
+    "title": "Ex Carlo Erba Bovisa",
+    "city": "Milano",
+    "type": "abbandonato",
+    "risk": "alto",
+    "legal": false,
+    "lat": 45.5085,
+    "lng": 9.152,
+    "desc": "Area ex chimica, solo recinti esterni.",
+    "tags": [
+      "urbex"
+    ]
   }
 ]

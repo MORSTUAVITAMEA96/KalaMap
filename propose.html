@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>KALA Map — Proponi</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo">KALA Map</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="map.html">Mappa</a></li>
+    <li><a href="archive.html">Archivio</a></li>
+    <li><a href="propose.html">Proponi</a></li>
+    <li><a href="info.html">Info</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h1>Proponi un nuovo luogo</h1>
+  <form id="proposeForm" class="card">
+    <input name="title" placeholder="Titolo *" required>
+    <input name="city" placeholder="Città / Quartiere">
+    <select name="type">
+      <option value="street_art">Street Art</option>
+      <option value="muro_legale">Muro legale</option>
+      <option value="hall_of_fame">Hall of Fame</option>
+      <option value="abbandonato">Abbandonato</option>
+    </select>
+    <select name="risk">
+      <option value="basso">Rischio basso</option>
+      <option value="medio" selected>Rischio medio</option>
+      <option value="alto">Rischio alto</option>
+    </select>
+    <label><input type="checkbox" name="legal"> Permesso confermato</label>
+    <textarea name="desc" placeholder="Descrizione"></textarea>
+    <input name="tags" placeholder="Tag (virgola separati)">
+    <button class="btn" type="submit">Salva proposta</button>
+  </form>
+  <div id="proposals"></div>
+</div>
+<script src="js/propose.js"></script>
+</body>
+</html>

@@ -2,155 +2,31 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KALA Map — Luoghi & Street Art</title>
-  <meta name="description" content="Mappa collaborativa di luoghi abbandonati, spazi pubblici e street art documentata in modo responsabile.">
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="assets/icon-192.png">
-  <link rel="apple-touch-icon" href="assets/icon-192.png">
-  <meta name="theme-color" content="#111111">
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-  <!-- Simple styles -->
-  <link rel="stylesheet" href="style.css">
-  <!-- Plugins -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-
+  <title>KALA Map — Home</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="topbar">
-  <h1>🗺️ KALA Map <span class="muted">street & urbex, responsabilmente</span></h1>
-  <button id="installBtn" class="btn small" hidden>Installa App</button>
-</header>
 
+<nav class="navbar">
+  <div class="nav-logo">KALA Map</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="map.html">Mappa</a></li>
+    <li><a href="archive.html">Archivio</a></li>
+    <li><a href="propose.html">Proponi</a></li>
+    <li><a href="info.html">Info</a></li>
+  </ul>
+</nav>
 
-<section class="logo-bar">
-  <img src="assets/kala-tag.jpg" alt="KALA tag" class="logo-img">
-  <div class="logo-text">
-    <strong>KALA</strong> — archivio collaborativo di luoghi, muri legali e street art. Niente inviti all'illegalità.
-  </div>
-</section>
-
-<section class="controls">
-  <div class="row">
-    <input id="search" type="search" placeholder="Cerca luogo, città, tag…">
-    <button id="geocodeBtn" class="btn small">Cerca indirizzo</button>
-    <button id="importBtn" class="btn small">Importa</button>
-    <button id="proposeBtn" class="btn small">Proponi</button>
-    <button id="locate" class="btn">Mappa attorno a me</button>
-    <button id="addPoint" class="btn">Aggiungi luogo</button>
-    <button id="exportData" class="btn">Esporta JSON</button>
-  </div>
-  <div class="filters row">
-    <label><input type="checkbox" class="flt" data-key="type" value="abbandonato" checked> Abbandonato</label>
-    <label><input type="checkbox" class="flt" data-key="type" value="street_art" checked> Street Art</label>
-    <label><input type="checkbox" class="flt" data-key="type" value="hall_of_fame" checked> Hall of Fame (legale)</label>
-    <label><input type="checkbox" class="flt" data-key="type" value="muro_legale" checked> Muro legale</label>
-    <label><input type="checkbox" class="flt" data-key="risk" value="alto" checked> Rischio Alto</label>
-    <label><input type="checkbox" class="flt" data-key="risk" value="medio" checked> Rischio Medio</label>
-    <label><input type="checkbox" class="flt" data-key="risk" value="basso" checked> Rischio Basso</label>
-  </div>
-</section>
-
-<div id="map"></div>
-
-<aside id="sidebar">
-  <button id="closeSidebar" class="btn small right">Chiudi</button>
-  <div id="placeDetails"></div>
-</aside>
-
-<footer class="footer">
-  <p><strong>Uso responsabile:</strong> questo sito è solo per documentazione artistica e culturale. Non incoraggia vandalismo, ingresso non autorizzato o attività illegali. Condividi <em>solo</em> luoghi pubblici o dove hai permesso esplicito. Gli amministratori rimuoveranno segnalazioni inadeguate.</p>
-  <p class="muted">© 2025 KALA Map • <a href="#" id="openDisclaimer">Note legali</a></p>
-</footer>
-
-<!-- Proposal Modal -->
-<div id="proposalModal" class="modal hidden">
-  <div class="modal-content large">
-    <h2>Proponi un luogo</h2>
-    <p class="muted">Compila i campi. Le proposte restano in locale finché non le esporti o invii.</p>
-    <form id="proposalForm" class="form-grid">
-      <input name="title" placeholder="Titolo *" required>
-      <input name="city" placeholder="Città / Quartiere">
-      <select name="type">
-        <option value="street_art">Street Art</option>
-        <option value="muro_legale">Muro legale</option>
-        <option value="hall_of_fame">Hall of Fame</option>
-        <option value="abbandonato">Abbandonato (solo perimetro/esterno)</option>
-      </select>
-      <select name="risk">
-        <option value="basso">Rischio basso</option>
-        <option value="medio" selected>Rischio medio</option>
-        <option value="alto">Rischio alto</option>
-      </select>
-      <label class="row">
-        <input type="checkbox" name="legal"> Permesso confermato
-      </label>
-      <textarea name="desc" rows="4" placeholder="Descrizione (no inviti all'illegalità)"></textarea>
-      <input name="tags" placeholder="Tag separati da virgola">
-      <input name="images" placeholder="URL immagini (facoltativo, separati da virgola)">
-      <div class="row">
-        <input type="file" id="proposalFiles" accept="image/*" multiple>
-        <span class="muted">oppure allega immagini: verranno salvate come anteprime locali</span>
-      </div>
-      <div id="proposalPreview" class="gallery"></div>
-      <div class="row end">
-        <button type="button" class="btn" id="saveProposal">Salva proposta</button>
-        <button type="button" class="btn ghost" id="cancelProposal">Annulla</button>
-      </div>
-    </form>
+<div class="container">
+  <h1>Benvenuto in KALA Map</h1>
+  <p>KALA Map è un archivio collaborativo di luoghi abbandonati, muri legali e street art a Milano e dintorni. 
+  L'obiettivo è documentare, non incoraggiare attività illegali. Puoi esplorare la mappa, consultare l'archivio o proporre nuovi luoghi.</p>
+  <div class="card">
+    <h2>Note legali</h2>
+    <p>Non pubblicare accessi a proprietà private né coordinate che incoraggino intrusioni. Indica solo muri legali, spazi pubblici o luoghi con permesso confermato.
+    I rischi e la sicurezza restano a carico dei visitatori. Contenuti inadeguati verranno rimossi.</p>
   </div>
 </div>
-
-<!-- Importer Modal -->
-<div id="importModal" class="modal hidden">
-  <div class="modal-content large">
-    <h2>Importa luoghi (JSON/CSV)</h2>
-    <p class="muted">Incolla JSON con campi simili a <code>places.json</code> o CSV: title,lat,lng,type,city,desc,legal,risk,tags</p>
-    <textarea id="importText" rows="10" placeholder="Incolla qui..."></textarea>
-    <div class="row end">
-      <button class="btn" id="runImport">Importa</button>
-      <button class="btn ghost" id="cancelImport">Chiudi</button>
-    </div>
-  </div>
-</div>
-
-<!-- Editor Modal (edit existing point) -->
-<div id="editModal" class="modal hidden">
-  <div class="modal-content large">
-    <h2>Modifica luogo</h2>
-    <div id="editBody"></div>
-    <div class="row end">
-      <button class="btn" id="saveEdit">Salva</button>
-      <button class="btn ghost" id="cancelEdit">Chiudi</button>
-    </div>
-  </div>
-</div>
-
-
-<!-- Disclaimer Modal -->
-<div id="legalModal" class="modal hidden">
-  <div class="modal-content">
-    <h2>Note legali & responsabilità</h2>
-    <p>1) Non pubblicare accessi a proprietà private né coordinate che incoraggino l'intrusione. 2) Indica solo muri legali, spazi pubblici, o luoghi con permesso confermato. 3) Rischi e sicurezza: visita i luoghi in modo consapevole; verifica normative locali. 4) Contenuti sensibili o illegali verranno rimossi.</p>
-    <button id="closeLegal" class="btn">Ho capito</button>
-  </div>
-</div>
-
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-<script src="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.js"></script>
-<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-<script src="app_v3.js"></script>
-<script>
-// Register service worker
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
-}
-</script>
 </body>
 </html>
