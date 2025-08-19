@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KALA Map — Home</title>
+  <title>KALA Map — Esplora</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
@@ -12,20 +12,13 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
 </head>
 <body>
-<div class="header"><div class="inner"><div class="brand"><img src="assets/kala-tag.jpg"><div class="title">KALA Map</div></div><nav class="nav"><a href="index.html" class="active">Index</a><a href="map.html" class="">Map</a><a href="explore.html" class="">Explore</a><a href="submit.html" class="">Submit</a><a href="legal.html" class="">Legal</a></nav></div></div>
+<div class="header"><div class="inner"><div class="brand"><img src="assets/kala-tag.jpg"><div class="title">KALA Map</div></div><nav class="nav"><a href="index.html" class="">Index</a><a href="map.html" class="">Map</a><a href="explore.html" class="active">Explore</a><a href="submit.html" class="">Submit</a><a href="legal.html" class="">Legal</a></nav></div></div>
 
-<section class="hero">
-  <h1 class="glow">KALA Map</h1>
-  <p>Archivio cyber-dark di street art, muri legali e perimetri urbex. Nessun invito all’illegalità, solo memoria e documentazione.</p>
-  <div style="margin-top:20px"><a class="btn btn-primary" href="map.html">Entra nella mappa</a></div>
-</section>
-<div class="container" style="margin-top:40px">
-  <div class="grid">
-    <div class="card"><h2>Street Art</h2><p>Catalogo neon dei muri urbani, dalle Hall of Fame ai tunnel nascosti.</p></div>
-    <div class="card"><h2>Muri legali</h2><p>Spazi autorizzati per esprimersi, filtrabili e sempre aggiornati.</p></div>
-    <div class="card"><h2>Urbex perimetro</h2><p>Ex-industriali solo da fuori, vantage point pubblici.</p></div>
-  </div>
+<div class="container" style="margin-top:20px">
+  <input id="exploreSearch" class="btn-ghost" placeholder="Cerca...">
+  <div id="list" class="grid" style="margin-top:20px"></div>
 </div>
+<script src="js/explore.js"></script>
 
 <div class="footer">© 2025 KALA Map — Archivio urbano responsabile</div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

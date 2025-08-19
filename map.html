@@ -2,32 +2,28 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>KALA Map — Mappa</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
-  <style>#map{height:90vh;margin-top:10px}</style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
 </head>
 <body>
+<div class="header"><div class="inner"><div class="brand"><img src="assets/kala-tag.jpg"><div class="title">KALA Map</div></div><nav class="nav"><a href="index.html" class="">Index</a><a href="map.html" class="active">Map</a><a href="explore.html" class="">Explore</a><a href="submit.html" class="">Submit</a><a href="legal.html" class="">Legal</a></nav></div></div>
 
-<nav class="navbar">
-  <div class="nav-logo">KALA Map</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="map.html">Mappa</a></li>
-    <li><a href="archive.html">Archivio</a></li>
-    <li><a href="propose.html">Proponi</a></li>
-    <li><a href="info.html">Info</a></li>
-  </ul>
-</nav>
-
-<div class="container">
-  <h1>Mappa</h1>
-  <div id="map"></div>
+<div class="container" style="margin-top:20px">
+  <div class="mapwrap"><div id="map"></div></div>
 </div>
+<script src="js/map.js"></script>
+
+<div class="footer">© 2025 KALA Map — Archivio urbano responsabile</div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-<script src="js/map.js"></script>
+<script src="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script src="js/common.js"></script>
 </body>
 </html>

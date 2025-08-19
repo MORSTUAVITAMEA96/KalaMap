@@ -1,16 +1,60 @@
 
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0f0f10;color:#f0f0f0}
-.navbar{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#111;position:sticky;top:0;z-index:1000}
-.nav-logo{font-weight:bold;font-size:18px}
-.nav-links{list-style:none;display:flex;gap:16px;margin:0;padding:0}
-.nav-links a{color:#eee;text-decoration:none;padding:6px 8px;border-radius:6px}
-.nav-links a:hover{background:#222}
-.container{padding:20px;max-width:960px;margin:auto}
-h1,h2{margin-top:0}
-.card{background:#181a1f;border:1px solid #333;border-radius:12px;padding:16px;margin:12px 0}
-.btn{background:#222;border:1px solid #444;color:#eee;padding:8px 12px;border-radius:8px;cursor:pointer}
-.btn:hover{filter:brightness(1.2)}
-input,textarea,select{width:100%;padding:8px;margin:6px 0;background:#111;border:1px solid #333;color:#eee;border-radius:6px}
-table{width:100%;border-collapse:collapse;margin:12px 0}
-th,td{border:1px solid #333;padding:8px}
-th{background:#222}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;height:100%;font-family:'Space Grotesk',sans-serif;background:#0a0c0f;color:#e8f9ff}
+a{color:#06f0ff;text-decoration:none;transition:.2s}
+a:hover{text-shadow:0 0 8px #06f0ff}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:.5px}
+h1{font-size:2rem;color:#06f0ff;text-shadow:0 0 12px #06f0ff}
+h2{font-size:1.5rem;color:#ff00aa;text-shadow:0 0 10px #ff00aa}
+h3{font-size:1.2rem;color:#afff00;text-shadow:0 0 8px #afff00}
+p{line-height:1.6}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+
+/* Navbar */
+.header{position:sticky;top:0;z-index:1000;background:#0d1117;border-bottom:1px solid #1f2937;box-shadow:0 0 16px #06f0ff33}
+.header .inner{display:flex;align-items:center;justify-content:space-between;padding:10px 20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:40px;border-radius:6px;border:2px solid #06f0ff;box-shadow:0 0 12px #06f0ff}
+.brand .title{font-weight:700;color:#06f0ff;text-shadow:0 0 12px #06f0ff}
+.nav{display:flex;gap:14px}
+.nav a{padding:8px 14px;border-radius:8px;background:#111827;color:#e8f9ff;transition:.3s}
+.nav a.active,.nav a:hover{background:#06f0ff;color:#0a0c0f;text-shadow:none}
+
+/* Hero */
+.hero{padding:60px 20px;text-align:center;background:radial-gradient(circle at top,#111827 0%,#0a0c0f 100%)}
+.hero p{color:#9ca3af}
+
+/* Card */
+.card{background:#111827;border:1px solid #1f2937;border-radius:14px;padding:20px;box-shadow:0 0 20px #000 inset,0 0 10px #06f0ff22;transition:.3s}
+.card:hover{box-shadow:0 0 30px #06f0ff55,0 0 12px #ff00aa33}
+
+/* Buttons */
+.btn{border:none;border-radius:10px;padding:10px 16px;font-weight:600;cursor:pointer;transition:.2s}
+.btn-primary{background:#06f0ff;color:#0a0c0f;box-shadow:0 0 12px #06f0ff}
+.btn-primary:hover{box-shadow:0 0 20px #06f0ff,0 0 12px #ff00aa}
+.btn-ghost{background:transparent;color:#e8f9ff;border:1px solid #06f0ff}
+.btn-ghost:hover{background:#06f0ff22}
+
+/* Tags & badges */
+.badge{padding:4px 8px;border-radius:6px;font-size:.8rem;background:#1f2937;color:#afff00;margin-right:6px}
+.tag{display:inline-block;background:#ff00aa22;border:1px solid #ff00aa;color:#ff00aa;padding:3px 8px;margin:2px;border-radius:20px;font-size:.75rem}
+
+/* Footer */
+.footer{padding:20px;text-align:center;color:#9ca3af;border-top:1px solid #1f2937;background:#0d1117}
+
+/* Map */
+.mapwrap{height:75vh;border:2px solid #06f0ff33;border-radius:12px;overflow:hidden;box-shadow:0 0 25px #06f0ff22}
+#map{height:100%;width:100%}
+.leaflet-popup-content{color:#e8f9ff}
+.leaflet-popup-content h3{color:#06f0ff}
+.leaflet-popup-content img{border-radius:10px;box-shadow:0 0 10px #000}
+.legend{position:absolute;bottom:20px;left:20px;background:#0d1117cc;padding:10px 14px;border-radius:10px;color:#e8f9ff;box-shadow:0 0 12px #000}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:12px}
+.gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;box-shadow:0 0 12px #000}
+
+/* Animations */
+@keyframes glowPulse{0%{box-shadow:0 0 6px #06f0ff}50%{box-shadow:0 0 20px #ff00aa}100%{box-shadow:0 0 6px #06f0ff}}
+.glow{animation:glowPulse 3s infinite}
