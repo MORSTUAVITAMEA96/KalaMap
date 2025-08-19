@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KALA Map — Luoghi & Street Art per Matteo</title>
+  <meta name="description" content="Mappa collaborativa di luoghi abbandonati, spazi pubblici e street art documentata in modo responsabile.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <meta name="theme-color" content="#111111">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <!-- Simple styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>🗺️ KALA Map <span class="muted">— per Matteo</span></h1>
+  <button id="installBtn" class="btn small" hidden>Installa App</button>
+</header>
+
+<section class="controls">
+  <div class="row">
+    <input id="search" type="search" placeholder="Cerca luogo, città, tag…">
+    <button id="locate" class="btn">Mappa attorno a me</button>
+    <button id="addPoint" class="btn">Aggiungi luogo</button>
+    <button id="exportData" class="btn">Esporta JSON</button>
+  </div>
+  <div class="filters row">
+    <label><input type="checkbox" class="flt" data-key="type" value="abbandonato" checked> Abbandonato</label>
+    <label><input type="checkbox" class="flt" data-key="type" value="street_art" checked> Street Art</label>
+    <label><input type="checkbox" class="flt" data-key="type" value="hall_of_fame" checked> Hall of Fame (legale)</label>
+    <label><input type="checkbox" class="flt" data-key="type" value="muro_legale" checked> Muro legale</label>
+    <label><input type="checkbox" class="flt" data-key="risk" value="alto" checked> Rischio Alto</label>
+    <label><input type="checkbox" class="flt" data-key="risk" value="medio" checked> Rischio Medio</label>
+    <label><input type="checkbox" class="flt" data-key="risk" value="basso" checked> Rischio Basso</label>
+  </div>
+</section>
+
+<div id="map"></div>
+
+<aside id="sidebar">
+  <button id="closeSidebar" class="btn small right">Chiudi</button>
+  <div id="placeDetails"></div>
+</aside>
+
+<footer class="footer">
+  <p><strong>Uso responsabile:</strong> questo sito è solo per documentazione artistica e culturale. Non incoraggia vandalismo, ingresso non autorizzato o attività illegali. Condividi <em>solo</em> luoghi pubblici o dove hai permesso esplicito. Gli amministratori rimuoveranno segnalazioni inadeguate.</p>
+  <p class="muted">© 2025 KALA Map • <a href="#" id="openDisclaimer">Note legali</a></p>
+</footer>
+
+<!-- Disclaimer Modal -->
+<div id="legalModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Note legali & responsabilità</h2>
+    <p>1) Non pubblicare accessi a proprietà private né coordinate che incoraggino l'intrusione. 2) Indica solo muri legali, spazi pubblici, o luoghi con permesso confermato. 3) Rischi e sicurezza: visita i luoghi in modo consapevole; verifica normative locali. 4) Contenuti sensibili o illegali verranno rimossi.</p>
+    <button id="closeLegal" class="btn">Ho capito</button>
+  </div>
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="app.js"></script>
+<script>
+// Register service worker
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
+}
+</script>
+</body>
+</html>

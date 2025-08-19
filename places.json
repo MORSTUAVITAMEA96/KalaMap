@@ -1,0 +1,70 @@
+[
+  {
+    "id": "mi_hof_lambrate",
+    "title": "Hall of Fame — Via Viotti (Lambrate)",
+    "city": "Milano",
+    "type": "hall_of_fame",
+    "risk": "basso",
+    "legal": true,
+    "lat": 45.4868,
+    "lng": 9.2423,
+    "desc": "Storico muro legale con rotazione di pezzi. Ideale per fotografare street art legale.",
+    "tags": [
+      "muro_legale",
+      "fotografia"
+    ],
+    "images": [],
+    "links": []
+  },
+  {
+    "id": "mi_street_nolo_tunnel",
+    "title": "Murales — Tunnel NoLo",
+    "city": "Milano",
+    "type": "street_art",
+    "risk": "medio",
+    "legal": false,
+    "lat": 45.5035,
+    "lng": 9.2165,
+    "desc": "Galleria di murales molto fotografati. Segnalazione a scopo documentale.",
+    "tags": [
+      "street_art",
+      "fotografia"
+    ],
+    "images": [],
+    "links": []
+  },
+  {
+    "id": "mi_ex_area_industriale",
+    "title": "Ex area industriale (perimetro esterno)",
+    "city": "Milano",
+    "type": "abbandonato",
+    "risk": "alto",
+    "legal": false,
+    "lat": 45.465,
+    "lng": 9.18,
+    "desc": "Documentazione esterna. Non incoraggiamo accessi non autorizzati.",
+    "tags": [
+      "urbex",
+      "storia locale"
+    ],
+    "images": [],
+    "links": []
+  },
+  {
+    "id": "mi_muro_legale_bovisa",
+    "title": "Muro legale — Bovisa",
+    "city": "Milano",
+    "type": "muro_legale",
+    "risk": "basso",
+    "legal": true,
+    "lat": 45.505,
+    "lng": 9.149,
+    "desc": "Spazio con permesso esplicito per dipingere. Verifica eventuali orari/regole locali.",
+    "tags": [
+      "legal",
+      "community"
+    ],
+    "images": [],
+    "links": []
+  }
+]
